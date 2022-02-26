@@ -1,0 +1,14 @@
+@using VendorsAndOrders.Models;
+
+<h3>Here are all of the orders made by this Vendor:</h3>
+
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendors"].Id/orders/@order.Id'>@order.Description</a></li>
+}
+</ol>
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a New Order</a></p>
+<p><a href='/vendors'>Rerurn to Vendor List</a></p>
+<p><a href='/'>Return to Main Page</a></p>
