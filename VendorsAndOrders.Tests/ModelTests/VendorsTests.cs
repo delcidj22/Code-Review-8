@@ -18,7 +18,7 @@ namespace VendorsAndOrders.Tests
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
       //Arrange 
-      Vendor newVendor = new Vendor("Test Vendor");
+      Vendor newVendor = new Vendor("Test Vendor", "Test Description");
 
       //Assert
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
@@ -29,7 +29,8 @@ namespace VendorsAndOrders.Tests
     {
       //Arrange 
       string name = "Vendor Name";
-      Vendor newVendor = new Vendor(name);
+      string description = "Vendor Description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act 
       string result = newVendor.Name;
@@ -43,7 +44,8 @@ namespace VendorsAndOrders.Tests
     {
       //Arrange 
       string name = "Vendor Name";
-      Vendor newVendor = new Vendor(name);
+      string description = "Vendor Description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       int result = newVendor.Id;
@@ -57,9 +59,11 @@ namespace VendorsAndOrders.Tests
     {
       //Arrange
       string name01 = "Pierre's Bakery";
+      string description01 = "Dough and Sprinkles";
       string name02 = "Jon's Bakery";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description02 = "Coffee and Chocolate";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act 
@@ -74,9 +78,11 @@ namespace VendorsAndOrders.Tests
     {
       //Arrange 
       string name01 = "Pierre's Bakery";
+      string description01 = "Dough and Sprinkles";
       string name02 = "Jon's Bakery";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description02 = "Coffee and Chocolate";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
 
       //Act 
       Vendor result = Vendor.Find(2);
@@ -84,7 +90,5 @@ namespace VendorsAndOrders.Tests
       //Assert
       Assert.AreEqual(newVendor2, result);
     }
-
-
   }
 }
