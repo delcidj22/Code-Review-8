@@ -24,6 +24,20 @@ namespace VendorsAndOrders.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
+    [TestMethod]
+    public void GetName_ReturnName_String()
+    {
+      //Arrange 
+      string name = "Vendor Name";
+      Vendor newVendor = new Vendor(name);
+
+      //Act 
+      string result = newVendor.Name;
+
+      //Assert
+      Assert.AreEqual(name, result);
+    }
+
 
   }
 }
