@@ -35,7 +35,7 @@
 
 
 ## Known Bugs
-- _When starting with pastries, app is not letting run an else if to go back and add bread to total order. Start by adding bread if you would like to add both._
+- _Can't look at Orders, instead we get "Hello World!". Hoping to get it fixed so that the added orders will show up._
 
 
 ## License
