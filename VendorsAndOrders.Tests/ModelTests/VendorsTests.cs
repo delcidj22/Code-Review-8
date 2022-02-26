@@ -38,6 +38,18 @@ namespace VendorsAndOrders.Tests
       Assert.AreEqual(name, result);
     }
 
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      //Arrange 
+      string name = "Vendor Name";
+      Vendor newVendor = new Vendor(name);
 
+      //Act
+      int result = newVendor.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
