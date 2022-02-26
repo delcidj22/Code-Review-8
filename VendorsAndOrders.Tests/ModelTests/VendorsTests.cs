@@ -51,5 +51,16 @@ namespace VendorsAndOrders.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      //Arrange
+      string name01 = "Pierre's Bakery";
+      string name02 = "Jon's Bakery";
+      Vendor newVendor1 = new Vendor(name01);
+      Vendor newVendor2 = new Vendor(name02);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+    }
   }
 }
