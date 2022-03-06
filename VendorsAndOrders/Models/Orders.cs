@@ -8,7 +8,7 @@ namespace VendorsAndOrders.Models
     public string Description { get; set; }
     public string Price { get; set; }
     public int Id { get; }
-    private static List<Order> _instances = new List<Order> {};
+    private static List<Order> _instances = new List<Order> { };
 
     public Order(string description, string name, string price)
     {
