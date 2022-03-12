@@ -18,7 +18,7 @@ namespace VendorsAndOrders.Tests
     public void OrderConstructor_CreateInstancesOfOrder_Order()
     {
       //Arrange
-      Order newOrder = new Order("Test Name", "Test Description", "Test Price");
+      Order newOrder = new Order("Test Name", "Test Description");
       //Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
@@ -29,18 +29,16 @@ namespace VendorsAndOrders.Tests
       //Arrange 
       string name = "Coffee";
       string description = "Coffee";
-      string price = "20.00";
-      Order newOrder = new Order(name, description, price);
+      Order newOrder = new Order(name, description);
 
       //Act
       string instanceName = newOrder.Name;
       string instanceDescription = newOrder.Description;
-      string instancePrice = newOrder.Price;
+    
 
       //Assert
       Assert.AreEqual(name, instanceName);
       Assert.AreEqual(description, instanceDescription);
-      Assert.AreEqual(price, instancePrice);
     }
   }
 }
