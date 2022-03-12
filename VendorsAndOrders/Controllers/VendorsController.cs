@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using System;
 using Microsoft.AspNetCore.Mvc;
 using VendorsAndOrders.Models;
+using System;
 
 namespace VendorsAndOrders.Controllers
 {
@@ -38,6 +38,19 @@ namespace VendorsAndOrders.Controllers
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
+    }
+
+    [HttpPost("/vendors/{orderId}/orders")]
+    public ActionResult Create(int vendorId, string orderName, string orderDescription)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderName, orderDescription);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
     }
   }
 }
